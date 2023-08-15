@@ -80,24 +80,11 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use { "github/copilot.vim" }
+
+  -- Intelligent completions
   use {
-    "zbirenbaum/copilot.lua",
-    event = "VimEnter",
-    config = function()
-      vim.defer_fn(function()
-        require("user.copilot")
-      end, 100)
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    module = "copilot",
-  }
-  use { 
-    "tzachar/cmp-tabnine", 
-    commit = "1a8fd2795e4317fd564da269cc64a2fa17ee854e", 
-    run = "./install.sh"
+    'codota/tabnine-nvim',
+    run = "./dl_binaries.sh"
   }
 
   -- Telescope
