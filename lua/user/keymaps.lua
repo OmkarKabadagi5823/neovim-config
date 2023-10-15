@@ -40,10 +40,10 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Lsp
-keymap("n", "<S-d>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "<S-c>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap("n", "<S-s>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap("n", "<S-r>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+vim.api.nvim_set_keymap('n', '<S-d>', ":call CocAction('jumpDefinition')<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-c>', ":call CocAction('codeAction')<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-s>', ":call CocAction('doHover')<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-r>', ":call CocAction('jumpReferences')<CR>", { noremap = true, silent = true })
 keymap("n", "<S-e>", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 -- Insert --
 -- Press jk fast to enter

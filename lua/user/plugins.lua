@@ -42,6 +42,7 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+  use {'neoclide/coc.nvim', branch = 'release'}
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -54,7 +55,7 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
+  use {"lukas-reineke/indent-blankline.nvim", main = 'ibl'}
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
@@ -76,16 +77,16 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  -- use "neovim/nvim-lspconfig" -- enable LSP
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Intelligent completions
-  use {
-    'codota/tabnine-nvim',
-    run = "./dl_binaries.sh"
-  }
+  -- use {
+  --   'codota/tabnine-nvim',
+  --   run = "./dl_binaries.sh"
+  -- }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
